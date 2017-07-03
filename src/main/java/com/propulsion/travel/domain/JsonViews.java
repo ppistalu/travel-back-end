@@ -8,7 +8,10 @@ import com.fasterxml.jackson.annotation.JsonView;
  */
 public interface JsonViews {
 	
-	interface Summary{
+	interface Main {
+	}
+	
+	interface Summary extends Main{
 	}
 	
 	interface Details extends Summary {

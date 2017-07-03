@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import groovy.transform.ToString;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,9 +28,14 @@ public class Route {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@JsonView(JsonViews.Main.class)
 	private String name;
+	@JsonView(JsonViews.Summary.class)
 	private Integer difficulty;
+	@JsonView(JsonViews.Summary.class)
 	private Double duration;
+	@JsonView(JsonViews.Main.class)
+	private String photo;
 	@OneToMany(mappedBy = "route")
 	private List<RouteTouristAttraction> touristAttractionsAssoc;
 }
