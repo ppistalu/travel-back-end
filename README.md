@@ -2,7 +2,7 @@
 
 1. **GET**  /home/search?query={search}
 
-       (retrives a list of routes (with id, name and picture), searched by name or part of the name, ignoring upper or lower case)
+      (retrives a list of routes (with id, name and picture), searched by name or part of the name, ignoring upper or lower case)
 2.  **GET**  /home
 
        (retrieves a list of all routes (with id, name and picture))
