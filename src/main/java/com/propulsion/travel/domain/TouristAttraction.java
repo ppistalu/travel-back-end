@@ -27,6 +27,7 @@ public class TouristAttraction {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonView(JsonViews.Summary.class)
 	private Long id;
 	@JsonView(JsonViews.Summary.class)
 	private Double longitude;

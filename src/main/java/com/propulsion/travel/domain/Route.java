@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.propulsion.travel.domain.JsonViews.Details;
+import com.propulsion.travel.domain.JsonViews.Main;
 
 import groovy.transform.ToString;
 import lombok.Data;
@@ -28,6 +30,7 @@ public class Route {
 	/** Unique identifier of a route. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonView(Main.class)
 	private Long id;
 	
 	/** Name of the route. */
