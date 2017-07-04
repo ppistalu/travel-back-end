@@ -25,13 +25,23 @@ import lombok.NoArgsConstructor;
 @lombok.ToString(exclude = "touristAttractionsAssoc")
 public class Route {
 	
+	/** Unique identifier of a route. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	/** Name of the route. */
 	@JsonView(JsonViews.Main.class)
 	private String name;
+	
+	/** 
+	 * Difficulty of the route, described as 1 being the easiest 
+	 * and 5 being the hardest. 
+	 */
 	@JsonView(JsonViews.Summary.class)
 	private Integer difficulty;
+	
+	
 	@JsonView(JsonViews.Summary.class)
 	private Double duration;
 	@JsonView(JsonViews.Main.class)

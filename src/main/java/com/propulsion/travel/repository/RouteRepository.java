@@ -10,8 +10,11 @@ import com.propulsion.travel.domain.RouteTouristAttraction;
 
 @Repository
 public interface RouteRepository extends JpaRepository<Route, Long> {
-	
+
+	/** Returns a {@link Route} by providing the {@code id}. */
 	Route findById(Long id);
 	
 	List<Route> findAll();
+	
+	List<Route> findByNameContainingIgnoreCase(String name);
 }

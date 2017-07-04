@@ -21,8 +21,7 @@ public class DefaultRouteService implements RouteService {
 	public DefaultRouteService(RouteRepository routerRepository) {
 		this.routeRepository = routerRepository;
 	}
-	
-	
+		
 	@Override
 	public Route findById(Long id) {
 		return routeRepository.findById(id);
@@ -32,6 +31,11 @@ public class DefaultRouteService implements RouteService {
 	@Override
 	public List<Route> findAll() {
 		return routeRepository.findAll();
+	}
+
+	@Override
+	public List<Route> retrieveRoutesByName(String name) {
+		return routeRepository.findByNameContainingIgnoreCase(name);
 	}
 
 }
