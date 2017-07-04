@@ -2,6 +2,8 @@ package com.propulsion.travel.service;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,17 +15,27 @@ import com.propulsion.travel.repository.RouteRepository;
 @Transactional
 public class DefaultRouteService implements RouteService {
 
-	private RouteRepository routerRepository;
+	private RouteRepository routeRepository;
 	
 	@Autowired
 	public DefaultRouteService(RouteRepository routerRepository) {
-		this.routerRepository = routerRepository;
+		this.routeRepository = routerRepository;
 	}
-	
-	
+		
 	@Override
 	public Route findById(Long id) {
-		return routerRepository.findById(id);
+		return routeRepository.findById(id);
+	}
+
+
+	@Override
+	public List<Route> findAll() {
+		return routeRepository.findAll();
+	}
+
+	@Override
+	public List<Route> retrieveRoutesByName(String name) {
+		return routeRepository.findByNameContainingIgnoreCase(name);
 	}
 
 }
