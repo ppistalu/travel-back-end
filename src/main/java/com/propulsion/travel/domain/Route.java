@@ -11,16 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import groovy.transform.ToString;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
 @EqualsAndHashCode(exclude = "id")
 @NoArgsConstructor
-@lombok.ToString(exclude = "touristAttractionsAssoc")
+@ToString(exclude = "touristAttractionsAssoc")
 public class Route {
 	
 	@Id
