@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * Global {@link ControllerAdvice @ControllerAdvice}.
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalControllerAdvice {
 
 	@InitBinder
