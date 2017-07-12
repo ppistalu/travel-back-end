@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,5 +38,10 @@ public class RestRouteController {
 	public List<Route> retrievereRoutesContaining(@RequestParam("query")  String name) {
 		return routeService.retrieveRoutesByName(name);
 	}
-
+	
+	@JsonView(JsonViews.Summary.class)
+	@GetMapping("/inforoute/{id}")
+	public Route retriveRoute(@PathVariable Long id){
+		return routeService.findById(id);
+	}
 }

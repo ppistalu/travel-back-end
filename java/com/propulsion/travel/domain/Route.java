@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -43,6 +44,9 @@ public class Route {
 	@JsonView(JsonViews.Summary.class)
 	private Integer difficulty;
 	
+	@JsonView(JsonViews.Summary.class)
+	@Lob
+	private String description;
 	
 	@JsonView(JsonViews.Summary.class)
 	private Double duration;
